@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brend_kategorijas",
+  "info": {
+    "singularName": "brend-kategorija",
+    "pluralName": "brend-kategorijas",
+    "displayName": "brend-kategorija"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Ime": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

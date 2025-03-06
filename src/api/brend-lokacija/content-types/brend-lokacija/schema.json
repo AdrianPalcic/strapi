@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brend_lokacijas",
+  "info": {
+    "singularName": "brend-lokacija",
+    "pluralName": "brend-lokacijas",
+    "displayName": "brend-lokacija"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Lokacija": {
+      "type": "string"
+    }
+  }
+}

@@ -1,1 +1,5 @@
-export default () => ({});
+module.exports = {
+    ckeditor: {
+        enabled: true,
+    },
+};

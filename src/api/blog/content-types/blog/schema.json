@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Naslov": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Naslov"
+    },
+    "Naslovna": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "kategorija": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::kategorija.kategorija"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "block": {
+      "type": "dynamiczone",
+      "components": [
+        "blog.content-block"
+      ]
+    }
+  }
+}

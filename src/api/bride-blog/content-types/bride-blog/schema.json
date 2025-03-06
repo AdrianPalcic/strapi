@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bride_blogs",
+  "info": {
+    "singularName": "bride-blog",
+    "pluralName": "bride-blogs",
+    "displayName": "Bride-blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Naslov": {
+      "type": "string"
+    },
+    "Ime_mlade": {
+      "type": "string"
+    },
+    "Naslovna": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Naslov"
+    },
+    "Mlada": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tips": {
+      "type": "richtext"
+    },
+    "Venue": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "omladi": {
+      "type": "string"
+    }
+  }
+}

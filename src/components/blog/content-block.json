@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_blog_content_blocks",
+  "info": {
+    "displayName": "Content-block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "enumeration",
+      "enum": [
+        "Text",
+        "Image"
+      ],
+      "default": "Text",
+      "required": true
+    },
+    "Bodytext": {
+      "type": "blocks"
+    },
+    "BodyImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

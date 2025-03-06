@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brends",
+  "info": {
+    "singularName": "brend",
+    "pluralName": "brends",
+    "displayName": "Brend",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Ime": {
+      "type": "string",
+      "required": true
+    },
+    "Naslovna": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "kategorija": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brend-kategorija.brend-kategorija"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Ime"
+    },
+    "Zupanija": {
+      "type": "string"
+    },
+    "brend_lokacija": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brend-lokacija.brend-lokacija"
+    },
+    "adresa": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "telefon": {
+      "type": "string"
+    },
+    "web": {
+      "type": "string"
+    },
+    "kontakt_osoba": {
+      "type": "string"
+    },
+    "kratki_opis": {
+      "type": "string"
+    },
+    "dugi_opis": {
+      "type": "richtext"
+    },
+    "Instagram": {
+      "type": "string"
+    },
+    "Facebook": {
+      "type": "string"
+    },
+    "Twitter": {
+      "type": "string"
+    },
+    "TikTok": {
+      "type": "string"
+    }
+  }
+}
