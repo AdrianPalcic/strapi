@@ -369,6 +369,35 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBesplatnipdfBesplatnipdf
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'besplatnipdfs';
+  info: {
+    displayName: 'besplatnipdf';
+    pluralName: 'besplatnipdfs';
+    singularName: 'besplatnipdf';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::besplatnipdf.besplatnipdf'
+    > &
+      Schema.Attribute.Private;
+    pdf: Schema.Attribute.Media<'files'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
@@ -381,6 +410,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    autor: Schema.Attribute.String;
+    avatar: Schema.Attribute.Media<'images'>;
     block: Schema.Attribute.DynamicZone<['blog.content-block']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -484,6 +515,7 @@ export interface ApiBrendBrend extends Struct.CollectionTypeSchema {
     dugi_opis: Schema.Attribute.RichText;
     email: Schema.Attribute.String;
     Facebook: Schema.Attribute.String;
+    gallery: Schema.Attribute.Media<'images', true>;
     Ime: Schema.Attribute.String & Schema.Attribute.Required;
     Instagram: Schema.Attribute.String;
     kategorija: Schema.Attribute.Relation<
@@ -505,7 +537,6 @@ export interface ApiBrendBrend extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     web: Schema.Attribute.String;
-    Zupanija: Schema.Attribute.String;
   };
 }
 
@@ -569,6 +600,31 @@ export interface ApiKategorijaKategorija extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTestTest extends Struct.CollectionTypeSchema {
+  collectionName: 'tests';
+  info: {
+    displayName: 'TEST';
+    pluralName: 'tests';
+    singularName: 'test';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::test.test'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    testtet: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1084,12 +1140,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::besplatnipdf.besplatnipdf': ApiBesplatnipdfBesplatnipdf;
       'api::blog.blog': ApiBlogBlog;
       'api::brend-kategorija.brend-kategorija': ApiBrendKategorijaBrendKategorija;
       'api::brend-lokacija.brend-lokacija': ApiBrendLokacijaBrendLokacija;
       'api::brend.brend': ApiBrendBrend;
       'api::bride-blog.bride-blog': ApiBrideBlogBrideBlog;
       'api::kategorija.kategorija': ApiKategorijaKategorija;
+      'api::test.test': ApiTestTest;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

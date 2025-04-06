@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "besplatnipdfs",
+  "info": {
+    "singularName": "besplatnipdf",
+    "pluralName": "besplatnipdfs",
+    "displayName": "besplatnipdf"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pdf": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

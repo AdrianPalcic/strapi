@@ -41,6 +41,16 @@
       "components": [
         "blog.content-block"
       ]
+    },
+    "autor": {
+      "type": "string"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

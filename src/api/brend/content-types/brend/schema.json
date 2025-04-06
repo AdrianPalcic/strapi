@@ -33,9 +33,6 @@
       "type": "uid",
       "targetField": "Ime"
     },
-    "Zupanija": {
-      "type": "string"
-    },
     "brend_lokacija": {
       "type": "relation",
       "relation": "oneToOne",
@@ -73,6 +70,13 @@
     },
     "TikTok": {
       "type": "string"
+    },
+    "gallery": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
