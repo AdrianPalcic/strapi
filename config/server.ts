@@ -1,5 +1,5 @@
 export default ({ env }) => ({
-  host: env('DATABASE_HOST', '0.0.0.0'), // Listen on all network interfaces
+  host: env('HOST', '0.0.0.0'), // Listen on all network interfaces
   port: env.int('PORT', 1337),   // Default Strapi port
   app: {
     keys: env.array('APP_KEYS'), // Required for session encryption
